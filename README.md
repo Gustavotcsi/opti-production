@@ -59,27 +59,27 @@ Para ver o algoritmo de otimização em ação, siga estes passos no sistema:
 
 ## Acesse o menu Raw Materials e cadastre:
 
-- **Madeira (Estoque: 10)
+  Madeira (Estoque: 10)
 
-- **Parafuso (Estoque: 50)
+  Parafuso (Estoque: 50)
 
-- **Acesse o menu Products e crie um novo produto:
+  Acesse o menu Products e crie um novo produto:
 
-- **Nome: Mesa de Jantar
+  Nome: Mesa de Jantar
 
-- **Preço: R$ 200,00
+  Preço: R$ 200,00
 
-- **Na mesma tela de criação (ou editando depois), adicione a Receita:
+  Na mesma tela de criação (ou editando depois), adicione a Receita:
 
-- **Selecione Madeira e Quantidade 4 -> Clique em Add.
+  Selecione Madeira e Quantidade 4 -> Clique em Add.
 
-- **Selecione Parafuso e Quantidade 8 -> Clique em Add.
+  Selecione Parafuso e Quantidade 8 -> Clique em Add.
 
-- **Salve o produto.
+  Salve o produto.
 
-- **Vá para a Home (Dashboard).
+  Vá para a Home (Dashboard).
 
-##O sistema deve calcular que é possível produzir 2 Mesas (limitado pela Madeira, pois 2 mesas usam 8 madeiras, sobrando 2. Não há madeira suficiente para uma 3ª mesa).
+O sistema deve calcular que é possível produzir 2 Mesas (limitado pela Madeira, pois 2 mesas usam 8 madeiras, sobrando 2. Não há madeira suficiente para uma 3ª mesa).
 
 Desenvolvido por Gustavo Távora.
 
