@@ -4,6 +4,7 @@ import ProductList from "./pages/ProductList";
 import ProductForm from "./pages/ProductForm";
 import RawMaterialList from "./pages/RawMaterialList";
 import RawMaterialForm from "./pages/RawMaterialForm";
+import Dashboard from "./pages/Dashboard";
 
 function DashboardPlaceholder() {
   return (
@@ -18,22 +19,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Todas as rotas agora vivem dentro do Layout */}
+        
         <Route element={<Layout />}>
-          
-          {/* Home agora é o Dashboard */}
-          <Route path="/" element={<DashboardPlaceholder />} />
-
-          {/* Rotas de Produtos */}
+          <Route path="/" element={<Dashboard />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/products/new" element={<ProductForm />} />
           <Route path="/products/:id" element={<ProductForm />} />
-
-          {/* Rotas de Matéria Prima */}
           <Route path="/raw-materials" element={<RawMaterialList />} />
           <Route path="/raw-materials/new" element={<RawMaterialForm />} />
           <Route path="/raw-materials/:id" element={<RawMaterialForm />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
