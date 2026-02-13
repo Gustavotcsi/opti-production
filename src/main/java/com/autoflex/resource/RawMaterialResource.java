@@ -14,6 +14,7 @@ import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -25,6 +26,17 @@ public class RawMaterialResource {
     @GET
     public List<RawMaterial> list() {
         return RawMaterial.listAll();
+    }
+
+    // NOVO: Método necessário para o formulário de edição carregar os dados
+    @GET
+    @Path("/{id}")
+    public RawMaterial get(@PathParam("id") Long id) {
+        RawMaterial entity = RawMaterial.findById(id);
+        if (entity == null) {
+            throw new WebApplicationException("Material with id " + id + " does not exist.", 404);
+        }
+        return entity;
     }
 
     @POST
@@ -39,7 +51,9 @@ public class RawMaterialResource {
     @Transactional
     public RawMaterial update(@PathParam("id") Long id, RawMaterial material) {
         RawMaterial entity = RawMaterial.findById(id);
-        if(entity == null) throw new NotFoundException();
+        if(entity == null) {
+            throw new NotFoundException();
+        }
         entity.name = material.name;
         entity.stockQuantity = material.stockQuantity;
         return entity;
@@ -49,6 +63,9 @@ public class RawMaterialResource {
     @Path("/{id}")
     @Transactional
     public void delete(@PathParam("id") Long id) {
-        RawMaterial.deleteById(id);
+        boolean deleted = RawMaterial.deleteById(id);
+        if (!deleted) {
+            throw new WebApplicationException("Material with id " + id + " does not exist.", 404);
+        }
     }
 }
