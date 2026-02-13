@@ -65,7 +65,9 @@ export default function ProductList() {
                   {product.sellingPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-right flex justify-end gap-3">
-                  <button className="text-blue-600 hover:text-blue-800 p-1 rounded hover:bg-blue-50 transition-colors">
+                  <button 
+                  onClick={() => navigate(`/products/${product.id}`)}
+                  className="text-blue-600 hover:text-blue-800 p-1 rounded hover:bg-blue-50 transition-colors">
                     <Edit size={18} />
                   </button>
                   <button 
