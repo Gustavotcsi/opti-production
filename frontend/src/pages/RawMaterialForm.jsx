@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import api from '../services/api';
 import { Save, ArrowLeft, Package } from 'lucide-react';
 
-// O ERRO ESTAVA AQUI: Tem que ter "export default" no começo!
 export default function RawMaterialForm() {
   const navigate = useNavigate();
   const { id } = useParams();
